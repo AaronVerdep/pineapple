@@ -1,0 +1,20 @@
+#!/usr/bin/python3
+
+license = "GNU"
+version = "1.0.0"
+package = "pin.godlover.myapp"
+
+#PineappleCode
+
+import os
+print('Hello Welcome to my app God Bless you!')
+input()
+print('How are you?')
+response = input('')
+if response == 'Good':
+    print('That's great to hear! God bless you!')
+    input()
+else:
+    print('Aww! Dont worry, remember God is always with you!')
+    input()
+os.system('clear')
