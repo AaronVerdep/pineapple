@@ -22,7 +22,7 @@ pineapple uninstall
 
 pineapple submit-my-app
 
-pineapple fun
+pineapple run
 
 pineapple build-lib
 
