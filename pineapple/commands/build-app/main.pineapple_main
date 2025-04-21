@@ -1,0 +1,65 @@
+import os
+import time
+
+print("Welcome to Pineapple App Builder!")
+print()
+print("Here, you can build a .pineapple_app, but first we need to make the source, and then compile it!")
+print("First, we need the name. What name will it have?")
+print()
+appname = input("> ")
+print(f"{appname} is a really cool name! Now we need the package name, make sure it starts with pin. or it won't work!")
+print()
+pkgname = input("> pin.")
+print(f"pin.{pkgname} is a REALLY REALLY cool package name! So, what license will it have? (GNU/None)")
+print()
+license = input("> ")
+print("Now, let's give a version, so people can be interested in the new updates :D!")
+print()
+version = input("> ")
+print("Final step! We will make the code with nano. When you finish, make sure to save with Ctrl+O and don't change the name!")
+input()
+os.system("nano template.pineapple_app_template_source")
+os.system("clear")
+print("[INIT] Building app...")
+
+# Crear directorios
+package_dir = f"{appname}/pin.{pkgname}"
+os.makedirs(package_dir, exist_ok=True)
+
+# Copiar contenido del template si existe
+template_path = "template.pineapple_app_template_source"
+main_app_path = os.path.join(package_dir, "main.pineapple_app_source")
+
+if os.path.exists(template_path):
+    with open(template_path, 'r') as template_file:
+        content = template_file.read()
+else:
+    content = "# Your app starts here!\nprint('Hello from Pineapple!')\n"
+
+with open(main_app_path, "w") as app_source:
+    app_source.write(content)
+
+# Crear archivo LICENSE
+license_path = os.path.join(appname, "LICENSE")
+with open(license_path, "w") as lic:
+    if license.strip().upper() == "GNU":
+        lic.write("""\
+GNU GENERAL PUBLIC LICENSE
+Version 3, 29 June 2007
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation. This program is distributed WITHOUT ANY WARRANTY.
+
+See <https://www.gnu.org/licenses/> for full license.
+""")
+    else:
+        lic.write("""\
+This software is NOT open-source.
+
+You are NOT allowed to modify, redistribute, or copy this program.
+All rights reserved.
+""")
+
+os.system("rm 'template.pineapple_app_template_source'")
+print("[DONE] App created successfully!")

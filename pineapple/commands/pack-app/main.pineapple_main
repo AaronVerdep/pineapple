@@ -1,0 +1,30 @@
+import os
+import time
+
+print("Welcome to Pineapple App Packer (Compiler)!")
+print()
+print("Here, you can compile a Pineapple app and turn it into a .pineapple_app file.")
+print("First, what is the name of the App?")
+print()
+appname = input("> ")
+
+print("Now, what is the name of the package?")
+pkgname = input("> pin.")
+
+source_path = os.path.join(appname, f"pin.{pkgname}", "main.pineapple_app_source")
+output_file = appname + ".pineapple_app"
+
+if not os.path.exists(source_path):
+    print(f"[ERROR] Source file not found: {source_path}")
+    exit()
+
+print("[INFO] Reading source file...")
+with open(source_path, "r") as f:
+    contenido = f.read()
+
+print("[INFO] Packing into binary (human-readable 1s and 0s)...")
+with open(output_file, "w") as out:
+    for letra in contenido:
+        out.write(format(ord(letra), '08b') + "\n")
+
+print(f"[SUCCESS] App packed and saved as '{output_file}'!")

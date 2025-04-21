@@ -1,0 +1,17 @@
+                     GNU GENERAL PUBLIC LICENSE
+                         Version 3, 29 June 2007
+
+Copyright (C) 2025 Aaron Reyes
+Everyone is permitted to copy and distribute verbatim copies of this license document, but changing it is not allowed.
+
+1. You can copy, distribute, and modify this software under the terms of this license. Modifications to this software should include a notice describing the changes made.
+
+2. You may not impose any additional restrictions on the rights of users of this software.
+
+3. This software is distributed with the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+4. You must provide access to the source code of the software or make it available under the same conditions as this license.
+
+5. If you distribute the software or your modifications, you must do so under the same terms as the GPL.
+
+For more details, see the full text of the license at https://www.gnu.org/licenses/gpl-3.0.html
